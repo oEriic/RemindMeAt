@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'create_task.dart';
 void main() {
   runApp(MyApp());
 }
@@ -77,24 +77,7 @@ class TaskList extends State<MyHomePage> {
   void _pushAddTaskScreen(){
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context){
-          return Scaffold(
-            appBar: AppBar(
-              title: Text('Add Task')
-            ),
-            body: TextField(
-              autofocus: true,
-              onSubmitted: (val){
-                _addTaskItem(val);
-                Navigator.pop(context);
-            },
-            decoration: InputDecoration(
-              hintText: 'Enter a task to be reminded',
-              contentPadding: const EdgeInsets.all(20.0)
-            ),
-            )
-          );
-      }
+        builder: (context) => CreateTask(),
       )
     );
   }
